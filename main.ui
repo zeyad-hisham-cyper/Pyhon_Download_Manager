@@ -2028,7 +2028,7 @@ QWidget {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2117,7 +2117,7 @@ QWidget {
       </property>
       <item>
        <property name="text">
-        <string>Quality</string>
+        <string>Best Quality</string>
        </property>
       </item>
      </widget>
@@ -2175,7 +2175,6 @@ QWidget {
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -2190,21 +2189,6 @@ QWidget {
      <attribute name="title">
       <string>Play List Downloader</string>
      </attribute>
-     <widget class="QComboBox" name="comboBox_2">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>110</y>
-        <width>231</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>Quality</string>
-       </property>
-      </item>
-     </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
@@ -2254,7 +2238,7 @@ QWidget {
        <rect>
         <x>110</x>
         <y>110</y>
-        <width>251</width>
+        <width>491</width>
         <height>31</height>
        </rect>
       </property>
@@ -2264,22 +2248,9 @@ QWidget {
        <rect>
         <x>110</x>
         <y>60</y>
-        <width>491</width>
+        <width>591</width>
         <height>31</height>
        </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Download1_3">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>60</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Search</string>
       </property>
      </widget>
      <widget class="QLabel" name="Title_2">

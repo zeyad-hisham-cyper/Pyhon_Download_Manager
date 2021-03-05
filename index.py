@@ -8,6 +8,7 @@ import os , time
 import urllib.request
 import pafy
 import humanize
+from pytube import Playlist
 
 
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"main.ui"))
@@ -32,6 +33,8 @@ class main(QMainWindow,FORM_CLASS):
         self.Download1_2.clicked.connect(self.Youtube_video)
         self.pushButton.clicked.connect(self.brows_video_loc)
         self.Download1.clicked.connect(self.download_video)
+        self.pushButton_2.clicked.connect(self.brows_video_loc)
+        self.Download2.clicked.connect(self.download_playlist)
 
     def handel_Brows(self):
         save_loc = QFileDialog.getSaveFileName(self, caption="Save As", directory='.', filter="All Files (*,*)")
@@ -65,7 +68,7 @@ class main(QMainWindow,FORM_CLASS):
     def Youtube_video(self):
         link = self.videoURL.text()
         v = pafy.new(link)
-        st = v.videostreams
+        st = v.streams
         for s in st:
             size = humanize.naturalsize(s.get_filesize())
             data ='{} {} {} {}'.format(s.mediatype , s.extension, s.quality, size)
@@ -75,6 +78,7 @@ class main(QMainWindow,FORM_CLASS):
     def brows_video_loc(self):
         save = QFileDialog.getExistingDirectory(self, "Save As")
         self.lineEdit.setText(save)
+        self.lineEdit_3.setText(save)
 
     def video_progressbar(self,total, recvd, ratio, rate, eta):
         self.progressBar.setValue(ratio * 100)
@@ -88,19 +92,37 @@ class main(QMainWindow,FORM_CLASS):
             link = self.videoURL.text()
             video_loc = self.lineEdit.text()
             v = pafy.new(link)
-            st = v.videostreams
+            st = v.streams
             quality = self.comboBox.currentIndex()
             start_download = st[quality].download(filepath=video_loc,callback=self.video_progressbar)
         
         except Exception:
-            QMessageBox.warning(self, 'Alert', 'Download Faild' ) 
+            QMessageBox.warning(self, 'Alert', 'Download Faild\nTry Valid URL or Choose "Best quality"' ) 
             return
         QMessageBox.information(self, 'Alert', 'Download Completed')
         self.progressBar.setValue(0)
         self.videoURL.setText("")
         self.lineEdit.setText("")            
-        
+        self.label_4.setText("")
+        self.comboBox.setCurrentIndex(0)
 
+    def download_playlist(self):
+        try:
+            pl_url = self.lineEdit_2.text()
+            pl = Playlist(pl_url)
+            save_loc = self.lineEdit_3.text()
+            for video in pl.videos:
+                video.streams.first().download(output_path=save_loc)
+                QApplication.processEvents()
+        except Exception:
+            QMessageBox.warning(self, 'Alert', 'Download Faild choose valid location and URL' ) 
+            return 
+   
+        QMessageBox.information(self, 'Alert', 'Download Completed')
+        self.progressBar_2.setValue(0)
+        self.lineEdit_2.setText("")
+        self.lineEdit_3.setText("")
+        
 def main_app():
     app = QApplication(sys.argv)
     window = main()
