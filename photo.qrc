@@ -1,8 +1,0 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-	<qresource>
-		<file>img/facebook-icon.png</file>
-		<file>img/github-icon.png</file>
-		<file>img/linkedin-icon.png</file>
-	</qresource>
-</RCC>
