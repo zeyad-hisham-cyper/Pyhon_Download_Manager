@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>744</width>
-    <height>308</height>
+    <height>548</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2021,14 +2021,19 @@ QWidget {
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>150</x>
       <y>10</y>
-      <width>721</width>
-      <height>241</height>
+      <width>581</width>
+      <height>491</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2037,22 +2042,27 @@ QWidget {
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>110</y>
+        <x>10</x>
+        <y>50</y>
         <width>101</width>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Browse</string>
+       <string>Browse Location</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="videoURL">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>60</y>
-        <width>501</width>
+        <x>120</x>
+        <y>10</y>
+        <width>341</width>
         <height>31</height>
        </rect>
       </property>
@@ -2060,11 +2070,16 @@ QWidget {
      <widget class="QProgressBar" name="progressBar">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>371</width>
+        <x>10</x>
+        <y>400</y>
+        <width>540</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
       </property>
       <property name="value">
        <number>0</number>
@@ -2073,11 +2088,16 @@ QWidget {
      <widget class="QPushButton" name="Download1_2">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>60</y>
+        <x>470</x>
+        <y>10</y>
         <width>91</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Search</string>
@@ -2086,9 +2106,9 @@ QWidget {
      <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>110</y>
-        <width>261</width>
+        <x>120</x>
+        <y>50</y>
+        <width>231</width>
         <height>31</height>
        </rect>
       </property>
@@ -2096,11 +2116,16 @@ QWidget {
      <widget class="QPushButton" name="Download1">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>110</y>
+        <x>10</x>
+        <y>290</y>
         <width>91</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Download</string>
@@ -2109,9 +2134,9 @@ QWidget {
      <widget class="QComboBox" name="comboBox">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>110</y>
-        <width>231</width>
+        <x>360</x>
+        <y>50</y>
+        <width>201</width>
         <height>31</height>
        </rect>
       </property>
@@ -2121,36 +2146,11 @@ QWidget {
        </property>
       </item>
      </widget>
-     <widget class="QLabel" name="Title">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>701</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Gotham Bold</family>
-        <pointsize>24</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>PyDM</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>60</y>
+        <x>10</x>
+        <y>10</y>
         <width>110</width>
         <height>31</height>
        </rect>
@@ -2167,9 +2167,9 @@ QWidget {
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>160</y>
-        <width>321</width>
+        <x>10</x>
+        <y>340</y>
+        <width>540</width>
         <height>31</height>
        </rect>
       </property>
@@ -2184,6 +2184,60 @@ QWidget {
        <string/>
       </property>
      </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>550</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Title:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>550</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Duration:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>550</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Views:</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -2192,8 +2246,8 @@ QWidget {
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>60</y>
+        <x>10</x>
+        <y>10</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -2210,11 +2264,16 @@ QWidget {
      <widget class="QPushButton" name="Download2">
       <property name="geometry">
        <rect>
-        <x>610</x>
-        <y>110</y>
+        <x>10</x>
+        <y>290</y>
         <width>101</width>
         <height>32</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Download</string>
@@ -2223,11 +2282,16 @@ QWidget {
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>110</y>
+        <x>10</x>
+        <y>50</y>
         <width>101</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Browse</string>
@@ -2236,9 +2300,9 @@ QWidget {
      <widget class="QLineEdit" name="lineEdit_3">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>110</y>
-        <width>491</width>
+        <x>120</x>
+        <y>50</y>
+        <width>441</width>
         <height>31</height>
        </rect>
       </property>
@@ -2246,49 +2310,83 @@ QWidget {
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>60</y>
-        <width>591</width>
+        <x>120</x>
+        <y>10</y>
+        <width>441</width>
         <height>31</height>
        </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Title_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>701</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Gotham Bold</family>
-        <pointsize>24</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>PyDM</string>
       </property>
      </widget>
      <widget class="QProgressBar" name="progressBar_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>711</width>
+        <x>10</x>
+        <y>400</y>
+        <width>551</width>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
       <property name="value">
        <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>550</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Duration:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>550</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Views:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>550</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Title:</string>
       </property>
      </widget>
     </widget>
@@ -2299,11 +2397,16 @@ QWidget {
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>110</y>
-        <width>101</width>
+        <x>10</x>
+        <y>70</y>
+        <width>111</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Browse</string>
@@ -2312,9 +2415,9 @@ QWidget {
      <widget class="QLineEdit" name="videoURL_2">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>60</y>
-        <width>601</width>
+        <x>150</x>
+        <y>10</y>
+        <width>411</width>
         <height>31</height>
        </rect>
       </property>
@@ -2322,11 +2425,16 @@ QWidget {
      <widget class="QPushButton" name="Download1_5">
       <property name="geometry">
        <rect>
-        <x>610</x>
-        <y>110</y>
+        <x>10</x>
+        <y>130</y>
         <width>101</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Download</string>
@@ -2335,17 +2443,17 @@ QWidget {
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>60</y>
-        <width>110</width>
+        <x>10</x>
+        <y>10</y>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="text">
@@ -2355,52 +2463,248 @@ QWidget {
      <widget class="QLineEdit" name="lineEdit_4">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>110</y>
-        <width>491</width>
+        <x>130</x>
+        <y>70</y>
+        <width>431</width>
         <height>31</height>
        </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Title_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>701</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Gotham Bold</family>
-        <pointsize>24</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>PyDM</string>
       </property>
      </widget>
      <widget class="QProgressBar" name="progressBar_3">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>711</width>
+        <x>10</x>
+        <y>400</y>
+        <width>551</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
       </property>
       <property name="value">
        <number>0</number>
       </property>
      </widget>
     </widget>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>3</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Alien Encounters Solid</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>File
+Donwloader</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Alien Encounters Solid</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Video
+Downloader</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Alien Encounters Solid</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Playlist
+Downloader</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>430</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #19232D;
+border: 1px solid #19232D;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="photo.qrc">
+      <normaloff>:/img/linkedin-icon.png</normaloff>:/img/linkedin-icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+R</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #19232D;
+ border: 1px solid #19232D;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="photo.qrc">
+      <normaloff>:/img/github-icon.png</normaloff>:/img/github-icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>430</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #19232D;
+border: 1px solid #19232D;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="photo.qrc">
+      <normaloff>:/img/facebook-icon.png</normaloff>:/img/facebook-icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Alien Encounters Solid</family>
+      <pointsize>23</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>PyDM</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Alien Encounters Solid</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>Follow Me:</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2415,6 +2719,8 @@ QWidget {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="photo.qrc"/>
+ </resources>
  <connections/>
 </ui>

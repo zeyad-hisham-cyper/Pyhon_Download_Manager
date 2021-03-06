@@ -9,6 +9,7 @@ import urllib.request
 import pafy
 import humanize
 from pytube import Playlist
+import webbrowser
 
 
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"main.ui"))
@@ -24,8 +25,9 @@ class main(QMainWindow,FORM_CLASS):
 
     def handel_UI(self):
         self.setWindowTitle("PyDM")
-        self.setFixedSize(737,285)
-        pass
+        self.setFixedSize(self.size())
+        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.tabBar().setVisible(False)
 
     def handel_buttons(self):
         self.Download1_5.clicked.connect(self.download) 
@@ -35,6 +37,27 @@ class main(QMainWindow,FORM_CLASS):
         self.Download1.clicked.connect(self.download_video)
         self.pushButton_2.clicked.connect(self.brows_video_loc)
         self.Download2.clicked.connect(self.download_playlist)
+        self.pushButton_4.clicked.connect(self.handel_file)
+        self.pushButton_5.clicked.connect(self.handel_video)
+        self.pushButton_6.clicked.connect(self.handel_pl)
+        self.pushButton_8.clicked.connect(self.git)
+        self.pushButton_7.clicked.connect(self.linked)
+        self.pushButton_9.clicked.connect(self.face)
+        
+
+
+    def handel_file(self):
+        self.tabWidget.setCurrentIndex(2)
+    def handel_video(self):
+        self.tabWidget.setCurrentIndex(0)
+    def handel_pl(self):
+        self.tabWidget.setCurrentIndex(1)
+    def git(self):
+        webbrowser.open_new_tab("https://github.com/zeyad-hisham-cyper")
+    def face(self):
+        webbrowser.open_new_tab("https://www.facebook.com/zeyad.hisham.716/")
+    def linked(self):
+        webbrowser.open_new_tab("https://www.linkedin.com/in/zeyad-hisham-a5127519b/")
 
     def handel_Brows(self):
         save_loc = QFileDialog.getSaveFileName(self, caption="Save As", directory='.', filter="All Files (*,*)")
