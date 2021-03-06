@@ -8,7 +8,7 @@ import os , time
 import urllib.request
 import pafy
 import humanize
-from pytube import Playlist
+from pytube import *
 import webbrowser
 
 
@@ -24,9 +24,10 @@ class main(QMainWindow,FORM_CLASS):
         self.handel_buttons()
 
     def handel_UI(self):
+        self.setWindowIcon(QIcon('img\logo.ico'))
         self.setWindowTitle("PyDM")
         self.setFixedSize(self.size())
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         self.tabWidget.tabBar().setVisible(False)
 
     def handel_buttons(self):
@@ -47,11 +48,11 @@ class main(QMainWindow,FORM_CLASS):
 
 
     def handel_file(self):
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(3)
     def handel_video(self):
-        self.tabWidget.setCurrentIndex(0)
-    def handel_pl(self):
         self.tabWidget.setCurrentIndex(1)
+    def handel_pl(self):
+        self.tabWidget.setCurrentIndex(2)
     def git(self):
         webbrowser.open_new_tab("https://github.com/zeyad-hisham-cyper")
     def face(self):
@@ -76,7 +77,6 @@ class main(QMainWindow,FORM_CLASS):
     def download(self):
         url = self.videoURL_2.text()
         loc = self.lineEdit_4.text()
-
         try:
             urllib.request.urlretrieve(url, loc, self.handel_progress)
         except Exception:
@@ -89,15 +89,29 @@ class main(QMainWindow,FORM_CLASS):
         self.lineEdit_4.setText("")
 
     def Youtube_video(self):
-        link = self.videoURL.text()
-        v = pafy.new(link)
-        st = v.streams
-        for s in st:
-            size = humanize.naturalsize(s.get_filesize())
-            data ='{} {} {} {}'.format(s.mediatype , s.extension, s.quality, size)
-            self.comboBox.addItem(data)
-            QApplication.processEvents()
-    
+        try:
+            link = self.videoURL.text()
+            v = pafy.new(link)
+            st = v.streams
+            title = v.title
+            durat = v.duration
+            rate = v.rating
+            rating = "%2.f" %rate
+
+            self.label_7.setText("Title: " + title)
+            self.label_8.setText("Duration: " + durat)
+            self.label_9.setText("Rating: " + rating)
+
+            for s in st:
+                size = humanize.naturalsize(s.get_filesize())
+                data ='{} {} {} {}'.format(s.mediatype , s.extension, s.quality, size)
+                self.comboBox.addItem(data)
+                QApplication.processEvents()
+        except Exception:
+            QMessageBox.warning(self, 'Alert', 'Faild\nTry Valid URL"' ) 
+            return
+
+
     def brows_video_loc(self):
         save = QFileDialog.getExistingDirectory(self, "Save As")
         self.lineEdit.setText(save)
@@ -113,6 +127,7 @@ class main(QMainWindow,FORM_CLASS):
     def download_video(self):
         try:
             link = self.videoURL.text()
+            self.lineEdit_3.setText("")
             video_loc = self.lineEdit.text()
             v = pafy.new(link)
             st = v.streams
@@ -127,24 +142,43 @@ class main(QMainWindow,FORM_CLASS):
         self.videoURL.setText("")
         self.lineEdit.setText("")            
         self.label_4.setText("")
+        self.label_7.setText("")
+        self.label_8.setText("")
+        self.label_9.setText("")
         self.comboBox.setCurrentIndex(0)
 
     def download_playlist(self):
         try:
+            self.lineEdit.setText("")
             pl_url = self.lineEdit_2.text()
             pl = Playlist(pl_url)
             save_loc = self.lineEdit_3.text()
-            for video in pl.videos:
-                video.streams.first().download(output_path=save_loc)
-                QApplication.processEvents()
+            index = self.comboBox_2.currentIndex()
+            vn = str(len(pl))
+            self.label_11.setText("Videos Number: " + vn)
+            if index == 0:
+                for link in pl:
+                    video = YouTube(link, on_progress_callback= self.pl_progress)
+                    video.streams.get_highest_resolution().download(output_path=save_loc)
+                    i +=1
+            elif index == 1 :
+                for link in pl:
+                    video = YouTube(link, on_progress_callback= self.pl_progress)
+                    video.streams.get_lowest_resolution().download(output_path=save_loc)
         except Exception:
             QMessageBox.warning(self, 'Alert', 'Download Faild choose valid location and URL' ) 
             return 
-   
         QMessageBox.information(self, 'Alert', 'Download Completed')
         self.progressBar_2.setValue(0)
         self.lineEdit_2.setText("")
         self.lineEdit_3.setText("")
+        QApplication.processEvents()
+    def pl_progress(self, stream , chunk , byte_remaining):
+        x = round(((stream.filesize - byte_remaining) / stream.filesize)*100,0)
+        self.progressBar_2.setValue(x)
+        QApplication.processEvents()
+    
+
         
 def main_app():
     app = QApplication(sys.argv)

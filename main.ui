@@ -2033,8 +2033,43 @@ QWidget {
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>521</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Alien Encounters Solid</family>
+        <pointsize>40</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string>Welcome to
+PyDM</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
       <string>Video Downloader</string>
@@ -2199,7 +2234,7 @@ QWidget {
        </font>
       </property>
       <property name="text">
-       <string>Title:</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_8">
@@ -2217,7 +2252,7 @@ QWidget {
        </font>
       </property>
       <property name="text">
-       <string>Duration:</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -2235,7 +2270,7 @@ QWidget {
        </font>
       </property>
       <property name="text">
-       <string>Views:</string>
+       <string/>
       </property>
      </widget>
     </widget>
@@ -2335,58 +2370,65 @@ QWidget {
        <number>0</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>170</y>
-        <width>550</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Duration:</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>230</y>
-        <width>550</width>
+        <width>211</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>14</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Views:</string>
+       <string>Videos Number:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QComboBox" name="comboBox_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>130</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>High Quality</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Low Quality</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>110</y>
-        <width>550</width>
-        <height>31</height>
+        <y>130</y>
+        <width>71</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>14</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Title:</string>
+       <string>Quality</string>
       </property>
      </widget>
     </widget>
@@ -2589,7 +2631,7 @@ border: 1px solid #19232D;</string>
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="photo.qrc">
+     <iconset>
       <normaloff>:/img/linkedin-icon.png</normaloff>:/img/linkedin-icon.png</iconset>
     </property>
     <property name="iconSize">
@@ -2619,7 +2661,7 @@ border: 1px solid #19232D;</string>
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="photo.qrc">
+     <iconset>
       <normaloff>:/img/github-icon.png</normaloff>:/img/github-icon.png</iconset>
     </property>
     <property name="iconSize">
@@ -2650,7 +2692,7 @@ border: 1px solid #19232D;
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="photo.qrc">
+     <iconset>
       <normaloff>:/img/facebook-icon.png</normaloff>:/img/facebook-icon.png</iconset>
     </property>
     <property name="iconSize">
